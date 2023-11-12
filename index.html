@@ -6,32 +6,51 @@
     <title>Welcome to My Website</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce3de;
             text-align: center;
-            margin: 100px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         #greeting {
-            font-size: 24px;
+            font-size: 32px;
             margin-bottom: 20px;
+            color: #5e5e5e;
+            animation: flyUpDown 2s ease-in-out infinite;
+        }
+
+        @keyframes flyUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         #wave {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            order: -1;
         }
 
         #smile {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="greeting"></div>
     <img id="wave" src="waving.gif" alt="Waving GIF">
-    <img id="smile" src="smiling_emoticon.gif" alt="Smiling Emoticon GIF">
+    <div id="greeting"></div>
+    <img id="smile" src="smiling-emoji.gif" alt="Smiling Emoticon GIF">
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -58,7 +77,7 @@
 
             // You can change the source URLs to the actual URLs of your waving and smiling emoticon GIFs.
             waveElement.src = 'waving.gif';
-            smileElement.src = 'smiling_emoticon.gif';
+            smileElement.src = 'smiling-emoji.gif';
         });
     </script>
 </body>
