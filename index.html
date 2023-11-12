@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 100px;
+        }
+
+        #greeting {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #wave {
+            width: 100px;
+            height: 100px;
+        }
+
+        #smile {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting"></div>
+    <img id="wave" src="waving.gif" alt="Waving GIF">
+    <img id="smile" src="smiling_emoticon.gif" alt="Smiling Emoticon GIF">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const greetingElement = document.getElementById('greeting');
+            const waveElement = document.getElementById('wave');
+            const smileElement = document.getElementById('smile');
+
+            function setGreeting() {
+                const currentTime = new Date().getHours();
+                let greeting;
+
+                if (currentTime < 12) {
+                    greeting = 'Good morning!';
+                } else if (currentTime < 18) {
+                    greeting = 'Good afternoon!';
+                } else {
+                    greeting = 'Good evening!';
+                }
+
+                greetingElement.textContent = greeting + ' Welcome to My Website';
+            }
+
+            setGreeting();
+
+            // You can change the source URLs to the actual URLs of your waving and smiling emoticon GIFs.
+            waveElement.src = 'waving.gif';
+            smileElement.src = 'smiling_emoticon.gif';
+        });
+    </script>
+</body>
+</html>
